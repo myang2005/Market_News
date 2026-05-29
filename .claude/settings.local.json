@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show *)",
+      "Bash(pip list *)",
+      "Bash(pip3 list *)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(command -v python3.11)",
+      "Bash(command -v python3.12)",
+      "Bash(command -v python3.13)",
+      "Bash(find /usr /opt /Library -name \"python3*\" -type f 2>/dev/null | grep -v \".pyc\" | grep \"bin/\" | head -20)",
+      "Bash(/usr/bin/python3 --version)",
+      "Bash(/usr/bin/python3 -m pip list)",
+      "Bash(/usr/bin/python3 -m pip --version)",
+      "Bash(/usr/bin/python3 -m pip install yfinance anthropic streamlit pandas requests python-dotenv APScheduler exchange-calendars)",
+      "Bash(chmod +x \"/Users/myang/Downloads/Claude Code/Market News/run.sh\")",
+      "Bash(/usr/bin/python3 -c ' *)",
+      "Bash(~/Library/Python/3.9/bin/streamlit run *)",
+      "Bash(echo \"Streamlit PID: $!\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill 54571)",
+      "Bash(chmod +x \"/Users/myang/Downloads/Claude Code/Market News/start_dashboard.sh\")",
+      "Bash(nohup /Users/myang/Library/Python/3.9/bin/streamlit run app.py --server.port 8501 --server.headless true)",
+      "Bash(echo \"PID: $!\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8501/)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
+    ]
+  }
+}
