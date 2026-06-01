@@ -246,14 +246,16 @@ def parse_claude_response(text: str) -> dict:
 
     # Split on [MARKER] lines.  Allow any trailing text on the marker line
     # (e.g. "[CORPORATE] Watch") so a stray word doesn't silently drop a section.
-    parts = re.split(r'\n?\n*\[([A-Z0-9_]+)\][^\n]*\n', text)
+    # Use (?:\n|$) instead of \n so the final marker is captured even when the
+    # model's response ends without a trailing newline.
+    parts = re.split(r'\n?\n*\[([A-Z0-9_]+)\][^\n]*(?:\n|$)', text)
     # parts[0] = empty string (discarded), then alternating marker / content pairs
+    _freeform = {"regime", "macro_calendar", "pitch_equity", "pitch_fi"}
     it = iter(parts[1:])
     for marker, content in zip(it, it):
         key = marker_map.get(marker.strip())
         if key:
             # Sections that are free-form prose (not bullet lists) — keep all lines as-is
-            _freeform = {"regime", "macro_calendar", "pitch_equity", "pitch_fi"}
             if key in _freeform:
                 sections[key] = content.strip()
             else:

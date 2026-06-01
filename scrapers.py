@@ -171,12 +171,7 @@ def scrape_investing_calendar(target_date: date, countries: list = None) -> list
         "currentTab": "custom",
         "limit_from": 0,
     }
-    for c in countries:
-        data_payload.setdefault("country[]", [])
-        if isinstance(data_payload["country[]"], list):
-            data_payload["country[]"].append(c)
-        else:
-            data_payload["country[]"] = [data_payload["country[]"], c]
+    data_payload["country[]"] = list(countries)
 
     try:
         r = requests.post(
