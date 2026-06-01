@@ -20,7 +20,8 @@ TICKERS = {
     "FTSE 100":     "^FTSE",
     "DAX":          "^GDAXI",
     "Nikkei 225":   "^N225",
-    "Hang Seng":    "^HSI",
+    "MSCI China":   "MCHI",
+    "MSCI EM":      "EEM",
     # Rates — ^TNX/^TYX report yield * 10 (e.g. 4.455 = 4.455%); ^IRX reports yield/10
     "13-wk T-Bill": "^IRX",   # 13-week T-bill; freely available short-end proxy
     "10Y Treasury": "^TNX",
@@ -31,7 +32,6 @@ TICKERS = {
     "USD/JPY":      "JPY=X",
     "GBP/USD":      "GBPUSD=X",
     # Commodities
-    "WTI Crude":    "CL=F",
     "Brent Crude":  "BZ=F",
     "Gold":         "GC=F",
     "Natural Gas":  "NG=F",
@@ -40,10 +40,10 @@ TICKERS = {
 }
 
 EQUITY_NAMES = ["S&P 500", "Nasdaq 100", "Dow Jones", "Russell 2000", "VIX"]
-INTL_NAMES = ["FTSE 100", "DAX", "Nikkei 225", "Hang Seng"]
+INTL_NAMES = ["FTSE 100", "DAX", "Nikkei 225", "MSCI China", "MSCI EM"]
 RATES_NAMES = ["13-wk T-Bill", "10Y Treasury", "30Y Treasury"]
 FX_NAMES = ["DXY", "EUR/USD", "USD/JPY", "GBP/USD"]
-COMMODITY_NAMES = ["WTI Crude", "Brent Crude", "Gold", "Natural Gas"]
+COMMODITY_NAMES = ["Brent Crude", "Gold", "Natural Gas"]
 CRYPTO_NAMES = ["Bitcoin"]
 
 
@@ -101,8 +101,9 @@ def fetch_prices(prior_day: date) -> dict:
 
         for name, symbol in TICKERS.items():
             try:
-                series = close_df[symbol] if symbol in close_df.columns else close_df
-                series = series.dropna()
+                if symbol not in close_df.columns:
+                    continue
+                series = close_df[symbol].dropna()
                 if len(series) < 2:
                     continue
                 close = float(series.iloc[-1])
