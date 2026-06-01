@@ -1,0 +1,232 @@
+{
+  "report_date": "2026-05-30",
+  "prior_day": "2026-05-29",
+  "market_open": true,
+  "is_monday": false,
+  "prices": {
+    "S&P 500": {
+      "close": 7580.06005859375,
+      "prev_close": 7563.6298828125,
+      "change": 16.43017578125,
+      "pct_change": 0.2172260678511746
+    },
+    "Nasdaq 100": {
+      "close": 30333.1796875,
+      "prev_close": 30223.890625,
+      "change": 109.2890625,
+      "pct_change": 0.3615982596548984
+    },
+    "Dow Jones": {
+      "close": 51032.4609375,
+      "prev_close": 50668.96875,
+      "change": 363.4921875,
+      "pct_change": 0.717386196063049
+    },
+    "Russell 2000": {
+      "close": 2919.340087890625,
+      "prev_close": 2936.570068359375,
+      "change": -17.22998046875,
+      "pct_change": -0.5867382717816836
+    },
+    "VIX": {
+      "close": 15.319999694824219,
+      "prev_close": 15.739999771118164,
+      "change": -0.4200000762939453,
+      "pct_change": -2.668361387556162
+    },
+    "FTSE 100": {
+      "close": 10409.2998046875,
+      "prev_close": 10426.0,
+      "change": -16.7001953125,
+      "pct_change": -0.1601783551937464
+    },
+    "DAX": {
+      "close": 25104.69921875,
+      "prev_close": 25092.25,
+      "change": 12.44921875,
+      "pct_change": 0.04961380007771324
+    },
+    "Nikkei 225": {
+      "close": 66329.5,
+      "prev_close": 64693.12109375,
+      "change": 1636.37890625,
+      "pct_change": 2.529448075134051
+    },
+    "MSCI China": {
+      "close": 55.099998474121094,
+      "prev_close": 54.9900016784668,
+      "change": 0.10999679565429688,
+      "pct_change": 0.2000305370010015
+    },
+    "MSCI EM": {
+      "close": 68.5999984741211,
+      "prev_close": 68.61000061035156,
+      "change": -0.01000213623046875,
+      "pct_change": -0.014578248275018486
+    },
+    "13-wk T-Bill": {
+      "close": 3.5880000591278076,
+      "prev_close": 3.5899999141693115,
+      "change": -0.0019998550415039062,
+      "pct_change": -0.055706269897408955
+    },
+    "10Y Treasury": {
+      "close": 4.453000068664551,
+      "prev_close": 4.454999923706055,
+      "change": -0.0019998550415039062,
+      "pct_change": -0.044890125157179654
+    },
+    "30Y Treasury": {
+      "close": 4.993000030517578,
+      "prev_close": 4.985000133514404,
+      "change": 0.007999897003173828,
+      "pct_change": 0.1604793738999147
+    },
+    "DXY": {
+      "close": 98.91000366210938,
+      "prev_close": 99.0199966430664,
+      "change": -0.10999298095703125,
+      "pct_change": -0.11108158421123639
+    },
+    "EUR/USD": {
+      "close": 1.1659088134765625,
+      "prev_close": 1.1617909669876099,
+      "change": 0.004117846488952637,
+      "pct_change": 0.3544395339576222
+    },
+    "USD/JPY": {
+      "close": 159.27000427246094,
+      "prev_close": 159.5679931640625,
+      "change": -0.2979888916015625,
+      "pct_change": -0.1867472828934937
+    },
+    "GBP/USD": {
+      "close": 1.3456957340240479,
+      "prev_close": 1.3416515588760376,
+      "change": 0.004044175148010254,
+      "pct_change": 0.3014325978496416
+    },
+    "Brent Crude": {
+      "close": 92.05000305175781,
+      "prev_close": 93.70999908447266,
+      "change": -1.6599960327148438,
+      "pct_change": -1.771418257317962
+    },
+    "Gold": {
+      "close": 4560.5,
+      "prev_close": 4499.2998046875,
+      "change": 61.2001953125,
+      "pct_change": 1.3602159884686917
+    },
+    "Natural Gas": {
+      "close": 3.2899999618530273,
+      "prev_close": 3.2850000858306885,
+      "change": 0.004999876022338867,
+      "pct_change": 0.1522032234916832
+    },
+    "Bitcoin": {
+      "close": 73372.5234375,
+      "prev_close": 73536.5546875,
+      "change": -164.03125,
+      "pct_change": -0.22306083103439522
+    }
+  },
+  "headlines": [
+    {
+      "title": "The War Against Inflation Would Nearly Be Over If Not for Trump",
+      "source": "Jezebel",
+      "url": "https://www.jezebel.com/the-war-against-inflation-would-nearly-be-over-if-not-for-trump",
+      "published": "2026-05-29",
+      "description": "We would be in an entirely different economy if practically anyone other than America\u2019s worst human was president."
+    },
+    {
+      "title": "AI Stocks, Oil Prices, and the Fed\u2019s Next Move",
+      "source": "Upenn.edu",
+      "url": "https://knowledge.wharton.upenn.edu/podcast/this-week-in-business/ai-stocks-oil-prices-and-the-feds-next-move/",
+      "published": "2026-05-29",
+      "description": "Jeremy Siegel discusses surging AI-driven markets, inflation pressures tied to global conflict, and what new Federal Reserve leadership could mean for interest rates.\u2026Read\u00a0More"
+    },
+    {
+      "title": "Consumer sentiment falls to new low; cost of living \u2018first-order\u2019 worry",
+      "source": "CFO Dive",
+      "url": "https://www.cfodive.com/news/consumer-sentiment-falls-new-low-cost-iving-first-order-worry-inflation-unemployment-Fed/821038/",
+      "published": "2026-05-29",
+      "description": "A sustained rise in long-run inflation expectations would likely increase the odds that the Federal Reserve will raise interest rates."
+    },
+    {
+      "title": "Investor Sentiment Declines, Leading to S&P Global (SPGI) Slide",
+      "source": "Yahoo Entertainment",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/investor-sentiment-declines-leading-p-140038318.html",
+      "published": "2026-05-29",
+      "description": "Impax Asset Management, an investment management firm based in London, specializing in sustainable investing, released its first-quarter 2026 investor letter..."
+    },
+    {
+      "title": "US stocks gain ground, adding to their records, as Dell soars",
+      "source": "Yahoo Entertainment",
+      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-shares-mostly-higher-hopes-031624203.html",
+      "published": "2026-05-29",
+      "description": "Wall Street pushed further into the record books Friday, as the major stock indexes extended the market\u2019s recent winning streak and closed out a solid month ..."
+    },
+    {
+      "title": "Markets watch Iran ceasefire talks as investors assess mega IPO valuations: Dow Jones, S&P, Nasdaq, Wall Street Futures",
+      "source": "Advfn.com",
+      "url": "https://investorshub.advfn.com/market-news/article/29232/markets-watch-iran-ceasefire-talks-as-investors-assess-mega-ipo-valuations-dow-jones-sp-nasdaq-wall-street-futures",
+      "published": "2026-05-29",
+      "description": "U. S. equity futures traded in a narrow range on Friday as investors monitored reports suggesting progress in negotiations aimed at extending the ceasefire..."
+    },
+    {
+      "title": "Show HN: Simple news aggregator with source bias meters",
+      "source": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29",
+      "description": "Article URL: https://unbiasthenews.com\nComments URL: https://news.ycombinator.com/item?id=48327194\nPoints: 2\n# Comments: 0"
+    },
+    {
+      "title": "Canada enters technical recession as spending declines",
+      "source": "Crypto Briefing",
+      "url": "https://cryptobriefing.com/canada-technical-recession-spending-declines/",
+      "published": "2026-05-29",
+      "description": "Canada's economic contraction may lead to prolonged investor caution, potential policy shifts, and challenges in sustaining growth amid global pressures.\nThe post Canada enters technical recession as spending declines appeared first on Crypto Briefing."
+    },
+    {
+      "title": "The Dead Economy Theory",
+      "source": "Owenmcgrann.com",
+      "url": "https://www.owenmcgrann.com/p/the-dead-economy-theory",
+      "published": "2026-05-29",
+      "description": "Article URL: https://www.owenmcgrann.com/p/the-dead-economy-theory\nComments URL: https://news.ycombinator.com/item?id=48324712\nPoints: 5\n# Comments: 0"
+    },
+    {
+      "title": "Alexis, Nikos and the (new) polls, everyone against everyone but also plus Adonis\u2019s blue flirtations, Bally\u2019s suitcases for London, and what the shipowners are buying and selling",
+      "source": "Protothema.gr",
+      "url": "https://en.protothema.gr/2026/05/29/alexis-nikos-and-the-new-polls-everyone-against-everyone-but-also-plus-adoniss-blue-flirtations-ballys-suitcases-for-london-and-what-the-shipowners-are-buying-and-selling/",
+      "published": "2026-05-29",
+      "description": "PPC, Helsinki, and the Data Center\nThe post Alexis, Nikos and the (new) polls, everyone against everyone but also plus Adonis\u2019s blue flirtations, Bally\u2019s suitcases for London, and what the shipowners are buying and selling appeared first on ProtoThema English."
+    }
+  ],
+  "summary": {
+    "regime": "",
+    "executive_summary": "- U.S. stocks rose modestly on Friday\u2014the S&P 500 (+0.22%), Nasdaq (+0.36%), and Dow (+0.72%)\u2014as Dell surged and markets extended recent gains into record territory.\n- The VIX fell 2.67% to 15.32, signaling reduced anxiety; bond yields barely moved while gold jumped 1.36%, suggesting investors are hedging against inflation concerns rather than fleeing risk entirely.\n- Asian markets this morning showed strong early momentum: the Nikkei posted a 2.53% gain overnight, while China and Europe traded mixed as geopolitical talks (Iran ceasefire) progressed and inflation expectations remained a focal point.\n- Small-cap weakness (Russell 2000 down 0.59%) hints at sector rotation\u2014tech-heavy indices outpacing value\u2014even as the broader market climbs.\n- Watch for any weekend headlines on Iran negotiations and consumer sentiment data; the market is pricing in stable rates near term despite persistent inflation chatter.",
+    "overnight": "- Japan's Nikkei 225 surged 2.53% (+1,636 points), the strongest performer across major indices, likely buoyed by a weaker yen (USD/JPY fell only 0.19%) and continued tech appetite.\n- European indices were muted: FTSE 100 slipped 0.16%, DAX was essentially flat (+0.05%), reflecting cautious sentiment ahead of weekend; China's MSCI eked out a 0.20% gain.\n- U.S. stock futures narrowly ranged Friday as investors monitored Iran ceasefire negotiations; the overnight bid for equities remains in place, setting up a potentially positive open.\n- Treasury yields were rock-solid: 10Y held at 4.453% (unchanged), 30Y ticked up just 1.6 bps to 4.993%, signaling the Fed's pause is well-embedded in pricing.\n- The dollar softened slightly (DXY \u22120.11%), while oil slid 1.77% to $92.05/barrel, likely profit-taking after a strong run and reduced geopolitical risk premium on ceasefire hopes.",
+    "central_banks": "- The Federal Reserve remains in a holding pattern\u2014no imminent rate decision this week\u2014with market pricing still centered on 3\u20134 cuts by year-end if inflation continues moderating.\n- Consumer sentiment has fallen to new lows, with cost of living cited as a first-order worry; sustained upward revisions to long-term inflation expectations could push the Fed to delay or skip cuts, a tail risk the market is watching but not yet pricing in.\n- Bank of Japan's weakness in the yen (despite yesterday's marginal USD/JPY move) reflects the carry-trade unwind and divergent policy: the BOJ is tightening while the Fed pauses, creating pressure on Japanese exporters but supporting equity valuations.\n- The ECB faces similar crosswinds: inflation in Europe remains sticky, constraining room for rate cuts despite growth concerns.",
+    "rates_credit": "- The yield curve remains steep and stable: 10Y/2Y spread holding firm, with the 30Y rising modestly (+1.6 bps) while shorter tenors held flat, a sign the market expects rates to stay elevated longer than some had hoped.\n- The 13-week T-bill (3.588%) ticked down 0.6 bps, a technical move in short-term funding but not a signal of panic; money-market conditions remain orderly.\n- No major auctions or credit events yesterday; the focus remains on whether sustained high inflation expectations force the Fed to pivot sooner than expected.",
+    "geopolitics": "- Iran ceasefire negotiations showed progress, reducing near-term geopolitical risk premium in oil and equities; Brent Crude's 1.77% decline reflects this relief.\n- Trade policy remains in the background but not the immediate catalyst for yesterday's moves; the headlines suggest political focus on inflation and presidential politics rather than tariff escalation.\n- Energy supplies and conflict dynamics in the Middle East and Eastern Europe remain structural risks to monitor, but are not driving intraday volatility at present.\n- The market is pricing in relative stability over the near term, as evidenced by the VIX decline and modest equity gains.",
+    "corporate": "- Dell Technologies was a standout performer on Friday, driving Nasdaq outperformance; the AI theme remains in favor, with semiconductor and cloud-infrastructure stocks leading.\n- S&P Global (SPGI) declined amid weakening investor sentiment and concerns over mega-IPO valuations, signaling some fatigue in high-multiple, growth-dependent names.\n- Tech earnings remain in focus: AI-driven gains have pushed valuations into question, and the market is now discriminating between structural AI winners and speculative bets.\n- Energy and defensive sectors are lagging, consistent with a risk-on tape, though small-cap underperformance suggests caution about broad-based enthusiasm.",
+    "macro_calendar": "No major releases scheduled today (Saturday, May 30, 2026). The next critical economic calendar events will resume Monday; watch for any weekend geopolitical developments or Fed commentary.",
+    "top5": "1. **S&P 500 +0.22%, Nasdaq +0.36%, Dow +0.72%** \u2014 U.S. equities pushed into record territory on modest gains, with large-cap and tech leading; the consistency of small gains over days suggests steady institutional demand rather than panic buying or volatility spikes.\n2. **VIX \u22122.67% to 15.32** \u2014 Equity volatility fell, indicating reduced anxiety and confidence in the risk-on narrative; a sub-16 VIX is consistent with a complacent or constructive regime.\n3. **Gold +1.36% to $4,560** \u2014 The surge in precious metals alongside rising equities is unusual and signals hedge demand against inflation uncertainty; investors are not fleeing to safety but are hedging tail risks.\n4. **Nikkei +2.53% overnight** \u2014 Japan's strongest equity rally among major indices reflects yen weakness (carry-trade tailwind) and synchronized global risk-on sentiment; Japan is a barometer for capital flows.\n5. **Oil \u22121.77%, yields flat** \u2014 Brent crude retreated on ceasefire news and profit-taking, while Treasury yields held steady despite rate-cut expectations; the market is comfortable with Fed pause and stable inflation expectations for now, but geopolitical relief is temporary.",
+    "daily_pitch": "TRADE: Long the 10-Year Treasury (TLT or IEF)\nDIRECTION: Long\nRATIONALE: The 10Y yield has held flat at 4.453% despite rising inflation expectations and consumer sentiment weakness, signaling the market may be underpricing rate-cut risk if growth stalls. Consumer sentiment is at new lows, Canada has entered technical recession, and the VIX falling to 15.32 suggests complacency\u2014a setup where a risk-off move could drive yields lower rapidly. The Fed is unlikely to hike, but equally unlikely to cut imminently, leaving the 10Y vulnerable to mean reversion lower if economic data soften. Your risk is a surprise hot inflation print or hawkish Fed commentary that forces rates higher, but the current positioning favors bonds as a asymmetric hedge.\nRISK: A stronger-than-expected employment report or surprise CPI acceleration would force 10Y yields higher and hurt the trade."
+  },
+  "macro_calendar": [
+    {
+      "time (ET)": "20:30",
+      "event": "Fed Chair Powell Speaks",
+      "period": "\u2014",
+      "actual": "\u2014",
+      "forecast": "\u2014",
+      "previous": "",
+      "importance": "\ud83d\udd34 High"
+    }
+  ],
+  "earnings_today": [],
+  "week_ahead": [],
+  "earnings_this_week": []
+}

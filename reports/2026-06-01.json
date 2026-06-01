@@ -1,0 +1,365 @@
+{
+  "report_date": "2026-06-01",
+  "prior_day": "2026-05-29",
+  "market_open": true,
+  "is_monday": true,
+  "prices": {
+    "S&P 500": {
+      "close": 7580.06005859375,
+      "prev_close": 7563.6298828125,
+      "change": 16.43017578125,
+      "pct_change": 0.2172260678511746
+    },
+    "Nasdaq 100": {
+      "close": 30333.1796875,
+      "prev_close": 30223.890625,
+      "change": 109.2890625,
+      "pct_change": 0.3615982596548984
+    },
+    "Dow Jones": {
+      "close": 51032.4609375,
+      "prev_close": 50668.96875,
+      "change": 363.4921875,
+      "pct_change": 0.717386196063049
+    },
+    "Russell 2000": {
+      "close": 2919.340087890625,
+      "prev_close": 2936.570068359375,
+      "change": -17.22998046875,
+      "pct_change": -0.5867382717816836
+    },
+    "VIX": {
+      "close": 15.319999694824219,
+      "prev_close": 15.739999771118164,
+      "change": -0.4200000762939453,
+      "pct_change": -2.668361387556162
+    },
+    "FTSE 100": {
+      "close": 10409.2998046875,
+      "prev_close": 10426.0,
+      "change": -16.7001953125,
+      "pct_change": -0.1601783551937464
+    },
+    "DAX": {
+      "close": 25104.69921875,
+      "prev_close": 25092.25,
+      "change": 12.44921875,
+      "pct_change": 0.04961380007771324
+    },
+    "Nikkei 225": {
+      "close": 66329.5,
+      "prev_close": 64693.12109375,
+      "change": 1636.37890625,
+      "pct_change": 2.529448075134051
+    },
+    "MSCI China": {
+      "close": 55.099998474121094,
+      "prev_close": 54.9900016784668,
+      "change": 0.10999679565429688,
+      "pct_change": 0.2000305370010015
+    },
+    "MSCI EM": {
+      "close": 68.5999984741211,
+      "prev_close": 68.61000061035156,
+      "change": -0.01000213623046875,
+      "pct_change": -0.014578248275018486
+    },
+    "13-wk T-Bill": {
+      "close": 3.5880000591278076,
+      "prev_close": 3.5899999141693115,
+      "change": -0.0019998550415039062,
+      "pct_change": -0.055706269897408955
+    },
+    "10Y Treasury": {
+      "close": 4.453000068664551,
+      "prev_close": 4.454999923706055,
+      "change": -0.0019998550415039062,
+      "pct_change": -0.044890125157179654
+    },
+    "30Y Treasury": {
+      "close": 4.993000030517578,
+      "prev_close": 4.985000133514404,
+      "change": 0.007999897003173828,
+      "pct_change": 0.1604793738999147
+    },
+    "DXY": {
+      "close": 98.91000366210938,
+      "prev_close": 99.0199966430664,
+      "change": -0.10999298095703125,
+      "pct_change": -0.11108158421123639
+    },
+    "EUR/USD": {
+      "close": 1.1652837991714478,
+      "prev_close": 1.1617909669876099,
+      "change": 0.0034928321838378906,
+      "pct_change": 0.3006420503418444
+    },
+    "USD/JPY": {
+      "close": 159.27000427246094,
+      "prev_close": 159.5679931640625,
+      "change": -0.2979888916015625,
+      "pct_change": -0.1867472828934937
+    },
+    "GBP/USD": {
+      "close": 1.3444474935531616,
+      "prev_close": 1.3416515588760376,
+      "change": 0.0027959346771240234,
+      "pct_change": 0.2083949933667058
+    },
+    "Brent Crude": {
+      "close": 92.05000305175781,
+      "prev_close": 93.70999908447266,
+      "change": -1.6599960327148438,
+      "pct_change": -1.771418257317962
+    },
+    "Gold": {
+      "close": 4560.5,
+      "prev_close": 4499.2998046875,
+      "change": 61.2001953125,
+      "pct_change": 1.3602159884686917
+    },
+    "Natural Gas": {
+      "close": 3.2899999618530273,
+      "prev_close": 3.2850000858306885,
+      "change": 0.004999876022338867,
+      "pct_change": 0.1522032234916832
+    },
+    "Bitcoin": {
+      "close": 73372.5234375,
+      "prev_close": 73536.5546875,
+      "change": -164.03125,
+      "pct_change": -0.22306083103439522
+    }
+  },
+  "headlines": [
+    {
+      "title": "The War Against Inflation Would Nearly Be Over If Not for Trump",
+      "source": "Jezebel",
+      "url": "https://www.jezebel.com/the-war-against-inflation-would-nearly-be-over-if-not-for-trump",
+      "published": "2026-05-29",
+      "description": "We would be in an entirely different economy if practically anyone other than America\u2019s worst human was president."
+    },
+    {
+      "title": "AI Stocks, Oil Prices, and the Fed\u2019s Next Move",
+      "source": "Upenn.edu",
+      "url": "https://knowledge.wharton.upenn.edu/podcast/this-week-in-business/ai-stocks-oil-prices-and-the-feds-next-move/",
+      "published": "2026-05-29",
+      "description": "Jeremy Siegel discusses surging AI-driven markets, inflation pressures tied to global conflict, and what new Federal Reserve leadership could mean for interest rates.\u2026Read\u00a0More"
+    },
+    {
+      "title": "Consumer sentiment falls to new low; cost of living \u2018first-order\u2019 worry",
+      "source": "CFO Dive",
+      "url": "https://www.cfodive.com/news/consumer-sentiment-falls-new-low-cost-iving-first-order-worry-inflation-unemployment-Fed/821038/",
+      "published": "2026-05-29",
+      "description": "A sustained rise in long-run inflation expectations would likely increase the odds that the Federal Reserve will raise interest rates."
+    },
+    {
+      "title": "Nvidia\u2019s latest product is a game-changer",
+      "source": "TheStreet",
+      "url": "https://www.thestreet.com/investing/stocks/nvidias-latest-product-is-a-game-changer",
+      "published": "2026-05-31",
+      "description": "Nvidia (NVDA) stock is up about 15.44% year to date, at the time of writing, Friday afternoon, May 29. Meanwhile, the SPDR S&P 500 index (SPY) is up about..."
+    },
+    {
+      "title": "Investor Sentiment Declines, Leading to S&P Global (SPGI) Slide",
+      "source": "Yahoo Entertainment",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/investor-sentiment-declines-leading-p-140038318.html",
+      "published": "2026-05-29",
+      "description": "Impax Asset Management, an investment management firm based in London, specializing in sustainable investing, released its first-quarter 2026 investor letter..."
+    },
+    {
+      "title": "US stocks gain ground, adding to their records, as Dell soars",
+      "source": "Yahoo Entertainment",
+      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-shares-mostly-higher-hopes-031624203.html",
+      "published": "2026-05-29",
+      "description": "Wall Street pushed further into the record books Friday, as the major stock indexes extended the market\u2019s recent winning streak and closed out a solid month ..."
+    },
+    {
+      "title": "Show HN: Simple news aggregator with source bias meters",
+      "source": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29",
+      "description": "Article URL: https://unbiasthenews.com\nComments URL: https://news.ycombinator.com/item?id=48327194\nPoints: 2\n# Comments: 0"
+    },
+    {
+      "title": "Canada enters technical recession as spending declines",
+      "source": "Crypto Briefing",
+      "url": "https://cryptobriefing.com/canada-technical-recession-spending-declines/",
+      "published": "2026-05-29",
+      "description": "Canada's economic contraction may lead to prolonged investor caution, potential policy shifts, and challenges in sustaining growth amid global pressures.\nThe post Canada enters technical recession as spending declines appeared first on Crypto Briefing."
+    },
+    {
+      "title": "US Jobs Report Set to Reveal Solid Growth, Steady Unemployment Rate",
+      "source": "Financial Post",
+      "url": "https://financialpost.com/pmn/business-pmn/us-jobs-report-set-to-reveal-solid-growth-steady-unemployment-rate",
+      "published": "2026-05-30",
+      "description": "Jobs week is coming up in the US, with a whole slate of indicators on the state of the labor market culminating on Friday with the government\u2019s official report on employment for the month of May."
+    }
+  ],
+  "summary": {
+    "regime": "Tech strength, inflation concerns, Fed on hold",
+    "executive_summary": "- U.S. equities extended gains Friday with the S&P 500, Nasdaq, and Dow all moving higher; the Nikkei surged 2.53% overnight, signaling risk appetite in Asia.\n- The VIX fell 2.67% to 15.32, indicating lower expected volatility and investor confidence, though consumer sentiment headlines suggest underlying unease about inflation and cost of living.\n- Treasury yields barely budged\u2014the 10Y held at 4.45%\u2014while the dollar weakened slightly; gold jumped 1.36%, a typical haven bid when inflation fears persist.\n- Jobs week begins this week in the U.S., culminating in Friday's payroll report; any sign of labor market softness could open the door for Fed rate cuts later in the year.\n- Oil fell 1.77% on the day; geopolitical tensions (referenced in headlines) are keeping energy prices elevated but volatile.",
+    "overnight": "- Asia rallied hard: Japan's Nikkei up 2.53%, China's MSCI up 0.20%; broad risk appetite after a strong U.S. close.\n- Europe flat to slightly down: FTSE 100 fell 0.16%, DAX essentially flat at +0.05%, suggesting caution ahead of the U.S. jobs week.\n- U.S. Treasury futures likely bid slightly; 10Y yield flat Friday and gold strength suggest a bid for safety, but equities also rallying means no real flight-to-quality panic.\n- Dollar weakened overnight (DXY -0.11%), with EUR/USD and GBP/USD both up about 0.21\u20130.30%; softer dollar often accompanies risk-on moves.",
+    "central_banks": "- The Federal Reserve is currently in a holding pattern with rates at the upper end of expectations (3.50\u20133.75% range implied from Treasury data); the market is pricing in the possibility of rate cuts in late 2026 if inflation cools and labor data softens.\n- Jobs week is critical: any disappointment in employment could strengthen the case for cuts as soon as July, while a strong report would likely keep the Fed on pause longer.\n- The Bank of Japan (BOJ) likely remains accommodative, supporting the Nikkei's overnight strength; the yen weakened slightly (USD/JPY at 159.3), consistent with carry-trade interest.\n- The ECB faces mixed signals: European growth is sluggish (Canada's recession noted in headlines), but sticky inflation from geopolitical pressures (oil, conflict-driven costs) may keep officials cautious.",
+    "rates_credit": "- The 10Y Treasury yield held flat at 4.453%, despite strong equity moves; this suggests the market is not yet pricing in major rate-cut expectations but is watching labor data carefully.\n- The 30Y rose 1.6 bps (4.993%), a subtle steepening signal that long-end investors are pricing in structural inflation rather than imminent Fed cuts.\n- Short-end rates (13-week T-bill) fell 0.6 bps, consistent with a small bid for safety and some expectation that the Fed may not tighten further.",
+    "geopolitics": "- Inflation pressures tied to global conflict remain a key theme (per headline commentary), keeping oil elevated despite the 1.77% decline; any escalation could reverse recent energy weakness.\n- Trade policy uncertainty under the current U.S. administration continues to overhang markets; one headline explicitly noted this as a headwind to inflation control, though this is more opinion than fact.\n- Energy supply remains tight globally, with Brent crude still above $92/barrel; OPEC+ actions and Middle East tensions are live factors affecting both oil and inflation.\n- Canada's technical recession signals broader North American weakness; this could spill into U.S. consumer and employment data, a risk heading into Friday's jobs report.",
+    "corporate": "- Nvidia remains a focal point: the stock is up 15.44% year-to-date, and the company released a new product Friday that is being called a \"game-changer\"\u2014AI hardware strength is a structural support for mega-cap tech.\n- Dell and other hardware manufacturers surged Friday along with the broader market; the AI cycle is broadening beyond pure semiconductor plays into infrastructure and enterprise equipment.\n- Sentiment surveys are flagging weakness (S&P Global data mentioned in headlines), and consumer confidence is at new lows\u2014a risk signal for earnings if spending contracts in coming quarters.\n- Watch for any earnings guidance tied to labor costs or supply-chain inflation during the coming earnings season.",
+    "macro_calendar": "No major releases scheduled today. The full jobs week (ADP, jobless claims, ISM Services, and the Bureau of Labor Statistics employment report) begins Tuesday and culminates Friday, June 6.",
+    "top5": "1. Nikkei's 2.53% surge overnight and broader Asia strength signal continued risk appetite; watch if this holds through U.S. cash open or if it fades as the week progresses.\n2. Jobs week begins Tuesday; Friday's payroll report is the marquee event\u2014any miss could trigger a 30+ bps repricing in Fed rate-cut expectations for H2 2026.\n3. Nvidia's new AI product and the continued strength in large-cap tech (Nasdaq up 0.36%) are driving equity gains, but investor sentiment surveys show cracks in consumer confidence\u2014a divergence worth watching.\n4. Oil declined 1.77% on Friday but remains elevated around $92/barrel; geopolitical risks tied to conflicts are keeping energy prices vulnerable to sudden spikes.\n5. Gold jumped 1.36% Friday despite equity strength, signaling that inflation concerns and geopolitical uncertainty are still on investors' minds; watch this as a gauge of underlying risk appetite.",
+    "daily_pitch": "TRADE: Long 10Y Treasury\nDIRECTION: Long\nRATIONALE: The 10Y yield held flat at 4.45% even as equities rallied and the VIX fell sharply, suggesting a rare moment where investors are buying both stocks and bonds. Consumer sentiment has fallen to new lows and inflation pressures are blamed on geopolitical factors (which could ease), not core economic overheating. Jobs week is the key event; if Friday's payroll misses expectations, the 10Y could fall 20\u201330 bps in a single session as the Fed cut narrative accelerates. Current yield offers a 4.45% entry with asymmetric downside if labor data disappoints.\nRISK: A stronger-than-expected jobs report could send Treasury yields sharply higher as rate-cut expectations evaporate, pushing long-dated bonds lower."
+  },
+  "macro_calendar": [
+    {
+      "time (ET)": "09:45",
+      "event": "S&P Global Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Private-sector factory activity gauge",
+      "previous": "54.5"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Factory sector health; >50 = expansion",
+      "previous": "52.7"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing Prices  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "\u2014",
+      "previous": "84.6"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing Employment  (May)",
+      "importance": "\ud83d\udfe1 Medium",
+      "note": "\u2014",
+      "previous": "46.4"
+    }
+  ],
+  "earnings_today": [],
+  "week_ahead": [
+    {
+      "time (ET)": "09:45",
+      "event": "S&P Global Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Private-sector factory activity gauge",
+      "previous": "54.5",
+      "date": "Mon Jun 01"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Factory sector health; >50 = expansion",
+      "previous": "52.7",
+      "date": "Mon Jun 01"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing Prices  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "\u2014",
+      "previous": "84.6",
+      "date": "Mon Jun 01"
+    },
+    {
+      "time (ET)": "09:45",
+      "event": "S&P Global Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Private-sector factory activity gauge",
+      "previous": "54.5",
+      "date": "Tue Jun 02"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Factory sector health; >50 = expansion",
+      "previous": "52.7",
+      "date": "Tue Jun 02"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing Prices  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "\u2014",
+      "previous": "84.6",
+      "date": "Tue Jun 02"
+    },
+    {
+      "time (ET)": "09:45",
+      "event": "S&P Global Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Private-sector factory activity gauge",
+      "previous": "54.5",
+      "date": "Wed Jun 03"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Factory sector health; >50 = expansion",
+      "previous": "52.7",
+      "date": "Wed Jun 03"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing Prices  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "\u2014",
+      "previous": "84.6",
+      "date": "Wed Jun 03"
+    },
+    {
+      "time (ET)": "09:45",
+      "event": "S&P Global Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Private-sector factory activity gauge",
+      "previous": "54.5",
+      "date": "Thu Jun 04"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Factory sector health; >50 = expansion",
+      "previous": "52.7",
+      "date": "Thu Jun 04"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing Prices  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "\u2014",
+      "previous": "84.6",
+      "date": "Thu Jun 04"
+    },
+    {
+      "time (ET)": "09:45",
+      "event": "S&P Global Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Private-sector factory activity gauge",
+      "previous": "54.5",
+      "date": "Fri Jun 05"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing PMI  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "Factory sector health; >50 = expansion",
+      "previous": "52.7",
+      "date": "Fri Jun 05"
+    },
+    {
+      "time (ET)": "10:00",
+      "event": "ISM Manufacturing Prices  (May)",
+      "importance": "\ud83d\udd34 High",
+      "note": "\u2014",
+      "previous": "84.6",
+      "date": "Fri Jun 05"
+    }
+  ],
+  "earnings_this_week": []
+}
