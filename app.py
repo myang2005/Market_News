@@ -5,15 +5,26 @@ from datetime import date, timedelta
 import pandas as pd
 import hashlib
 import re as _re
+import os
 from dotenv import load_dotenv
 from pathlib import Path
 import plotly.graph_objects as go
 import yfinance as yf
 
+# Load .env for local dev
+load_dotenv(Path(__file__).parent / ".env", override=True)
+
+# On Streamlit Cloud secrets are in st.secrets — push them into os.environ
+# so every module that uses os.getenv() picks them up automatically.
+for _secret_key in ["ANTHROPIC_API_KEY", "NEWS_API_KEY"]:
+    if not os.environ.get(_secret_key):
+        try:
+            os.environ[_secret_key] = st.secrets[_secret_key]
+        except Exception:
+            pass
+
 import market_data
 import report_generator
-
-load_dotenv(Path(__file__).parent / ".env", override=True)
 
 
 CHART_TICKERS = {
