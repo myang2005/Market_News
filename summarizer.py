@@ -39,7 +39,13 @@ Tone guidelines:
 - Do NOT write like a Bloomberg terminal or a Goldman trading desk note. Avoid dense shorthand like "lhs/rhs", "unch", "stops through", "bid-to-cover", "rip", "offered".
 - Spell out abbreviations the first time they appear (e.g. "Federal Open Market Committee (FOMC)").
 - Keep it concise and informative — not a textbook, not a lecture. One sentence of context is enough.
-- If something moved significantly, say why in plain language."""
+
+Epistemic discipline — this is mandatory:
+- Separate observed fact from interpretation. State market moves as facts ("the 10Y yield rose 6 bps"). Frame the cause or meaning as interpretation ("this may reflect…", "one possible driver is…", "markets may be responding to…").
+- Do not assert causation unless a headline or data release in today's context directly supports it. "Geopolitical tensions are keeping energy prices elevated" is an unsupported causal claim unless a specific headline says so. Write "energy prices remain elevated; geopolitical uncertainty may be a factor" instead.
+- Do not make specific quantitative forward projections (e.g. "a payroll miss could trigger a 30+ bps repricing"). If a scenario is worth flagging, frame it explicitly: "a weaker-than-expected print could put upward pressure on rate-cut pricing" — no specific magnitude.
+- Phrases to use when interpreting moves: "may suggest", "could indicate", "appears to reflect", "markets may be watching", "one possible interpretation is", "likely tied to" (only when strongly supported by a headline).
+- Phrases to avoid: "is causing", "will", "clearly", "obviously", confident causal chains with no source, specific bps projections for future moves."""
 
 SUMMARY_PROMPT_TEMPLATE = """Using the market data and headlines below, generate a morning market briefing.
 
@@ -56,22 +62,22 @@ CRITICAL FORMATTING RULES — violating these will break the parser:
 A single short phrase (4–8 words) capturing today's overall market regime. Examples: "Tech-led risk-on, rates sticky" / "Risk-off, dollar bid" / "Inflation scare, rates climbing" / "Oil shock, defensives bid" / "Mixed — equities up, bonds down". No bullet points, no period. Just the phrase.
 
 [EXECUTIVE_SUMMARY]
-3-5 bullet points starting with -. Cover: biggest prior-day moves and drivers, overnight setup, what to watch today. No preamble or title.
+3-5 bullet points starting with -. State what moved and by how much (fact), then frame the driver as interpretation ("may reflect", "appears tied to"). Cover: biggest prior-day moves, overnight setup, key things to watch today. No preamble or title.
 
 [OVERNIGHT]
-3-4 bullet points starting with -. Cover: Asian equity performance, European equity performance, U.S. futures direction, Treasury yield moves, oil and dollar. Be directional and specific.
+3-4 bullet points starting with -. Report what markets did — direction and rough magnitude. If a cause is apparent from a headline, name it and attribute it ("following…", "after reports of…"). If no clear cause is sourced, describe the move without asserting a driver.
 
 [CENTRAL_BANKS]
-Bullet points starting with -. Always write something — even if it was a quiet day, note the current Fed posture, whether the Fed is in a blackout period, what the market currently expects for the next meeting, or any recent comments worth flagging. Cover Fed, ECB, BOJ, BOE if relevant.
+Bullet points starting with -. Always write something. State what officials said (or that it was quiet). Do not extrapolate beyond their words — if a speaker said inflation is sticky, write that; do not add "suggesting rates will stay higher for longer" unless they said that. Note current market pricing for the next meeting as a fact ("fed funds futures are pricing…"), not a prediction.
 
 [RATES_CREDIT]
-2-3 bullet points starting with -. Yield curve, spread moves, Treasury auctions, drivers of rate moves.
+2-3 bullet points starting with -. State yield and spread moves as facts. Frame drivers as interpretation ("the move may reflect…", "could suggest…"). If a data release directly drove the move, name it explicitly. Avoid asserting causation from global themes unless sourced.
 
 [GEOPOLITICS]
-Bullet points starting with -, max 4 items. Always write something — if there were no major developments, briefly note the key ongoing themes (trade policy, conflicts, energy supply) and whether they were quiet or active yesterday.
+Bullet points starting with -, max 4 items. Always write something. Report developments that are in the headlines. If a theme (trade policy, a conflict, energy supply) has been ongoing but was quiet yesterday, say so — do not imply it is actively moving markets unless a headline supports it.
 
 [CORPORATE]
-Bullet points starting with -, max 4 items. Always write something — if earnings were quiet, note what major companies are reporting later this week or what sector themes are driving stocks right now.
+Bullet points starting with -, max 4 items. Always write something. State earnings results and analyst actions as facts. Attribute stock moves to specific catalysts where sourced. If a sector is moving, describe the move and note the possible driver ("may reflect…") rather than asserting a cause.
 
 [MACRO_CALENDAR]
 List only the genuinely important scheduled economic releases for today ({report_date}). Use your knowledge of the standard U.S. economic release schedule to identify what is actually due today. Format each item exactly as:
@@ -81,34 +87,55 @@ Only include releases that are market-moving (e.g. CPI, jobs report, GDP, PCE, F
 [TOP5]
 {top5_instruction}
 
-[DAILY_PITCH]
-Pitch one trade idea that is directly supported by the market data and news above. Choose either:
-(a) A single U.S.-listed stock — long or short, with a clear catalyst from recent price action or news.
-(b) A simple fixed income or FX trade — e.g. long/short a G10 currency pair, long/short a Treasury, or a straightforward investment-grade credit trade. No structured products, no options strategies.
+[PITCH_EQUITY]
+FORMATTING NOTE: Mandatory structured format. Epistemic-discipline tone guidelines apply to the CONTENT of each field only — not the labels or structure. Do not convert to prose. Five labels required, in this exact order, each on its own line.
 
-Format your response exactly like this (keep each label on its own line):
-TRADE: [e.g. "Long NVDA" or "Short EUR/USD" or "Long 10Y Treasury"]
-DIRECTION: [Long or Short]
-RATIONALE: [2-4 sentences explaining why — reference the actual data from today's report. What is driving this trade? What is the catalyst or setup? What would make you wrong?]
-RISK: [1 sentence on what could go wrong]
+Identify one U.S.-listed equities setup worth watching today — long or short a single stock. Frame it as a conditional, risk-aware setup, not a confident recommendation. Use language like "may be attractive if…", "could work if…", "would be invalidated by…".
 
-Write for someone learning the industry. Avoid jargon. Be direct and specific — no vague statements.
+You MUST use exactly these five labels, in this order:
+SETUP: [Stock and direction — e.g. "Long NVDA" or "Short TSLA"]
+CATALYST: [1–2 sentences. What specific upcoming event or developing situation could trigger a move? Be concrete.]
+WHY: [1–2 sentences. Why does this setup look interesting given the current backdrop? Use conditional language.]
+INVALIDATION: [1 sentence. What specific data print, guidance cut, or market event would make this setup wrong?]
+HORIZON: [Short phrase only — e.g. "1–3 days" or "into earnings Wednesday" or "through end of week"]
 
-Keep everything concise. You may use "bps" for basis points but avoid heavy trading-desk shorthand. Write for someone smart who is still learning the industry."""
+[PITCH_FI]
+FORMATTING NOTE: Mandatory structured format. Epistemic-discipline tone guidelines apply to the CONTENT of each field only — not the labels or structure. Do not convert to prose. Five labels required, in this exact order, each on its own line.
+
+Identify one fixed income or FX setup worth watching today — e.g. a Treasury yield level, a G10 currency pair, or a credit spread. Frame it as a conditional, risk-aware setup, not a confident recommendation. Use language like "may be attractive if…", "could work if…", "would be invalidated by…".
+
+You MUST use exactly these five labels, in this order:
+SETUP: [Instrument and direction — e.g. "Long 10Y Treasury" or "Short EUR/USD" or "Long IG credit"]
+CATALYST: [1–2 sentences. What specific upcoming macro event or data release could trigger a move?]
+WHY: [1–2 sentences. Why does this setup look interesting given the current rates/FX backdrop? Use conditional language.]
+INVALIDATION: [1 sentence. What specific data print, central bank action, or market event would make this setup wrong?]
+HORIZON: [Short phrase only — e.g. "into Friday's jobs report" or "through next FOMC" or "1–3 days"]
+
+Example of correct output for PITCH_FI (content illustrative only):
+SETUP: Long 10Y Treasury
+CATALYST: Friday's nonfarm payrolls report is the key near-term event — a softer print could push rate-cut expectations higher and send yields lower.
+WHY: The 10Y yield has risen roughly 15 bps over the past two weeks on resilient data; if that trend reverses on a weak jobs number, duration may benefit. The setup may be worth watching if labor data comes in below consensus.
+INVALIDATION: A payrolls print above 250k or hotter-than-expected average hourly earnings would likely push yields higher and undermine the long duration case.
+HORIZON: Into Friday's jobs report
+
+Keep each field concise. You may use "bps" for basis points."""
 
 TOP5_WEEKDAY = (
     "Numbered list 1-5, each item on its own line. "
     "The five biggest market-moving developments from yesterday — macro data releases, "
     "Fed commentary, major asset moves, geopolitical events, earnings surprises. "
-    "Include the magnitude of the move and why it matters for today's session."
+    "For each: state what happened and the magnitude as fact, then frame the market significance "
+    "as interpretation ('may matter because…', 'could influence…'). "
+    "Do not assert forward outcomes — describe the setup or risk, not the result."
 )
 
 TOP5_MONDAY = (
     "Numbered list 1-5, each item on its own line. "
-    "It is Monday morning, so focus on the five most important things that happened over the weekend "
-    "that could affect markets this week — geopolitical developments, policy announcements, "
+    "It is Monday morning — focus on the five most important things that happened over the weekend "
+    "that could affect markets this week: geopolitical developments, policy announcements, "
     "major corporate news, commodity moves, or anything that broke over Saturday/Sunday. "
-    "If the weekend was quiet, flag the five biggest themes heading into the week instead."
+    "State each development as fact, then note why markets may be watching it. "
+    "If the weekend was quiet, flag the five biggest ongoing themes heading into the week instead."
 )
 
 
@@ -184,14 +211,15 @@ def parse_claude_response(text: str) -> dict:
     sections = {
         "regime":            "",
         "executive_summary": "",
-        "overnight": "",
-        "central_banks": "",
-        "rates_credit": "",
-        "geopolitics": "",
-        "corporate": "",
-        "macro_calendar": "",
-        "top5": "",
-        "daily_pitch": "",
+        "overnight":         "",
+        "central_banks":     "",
+        "rates_credit":      "",
+        "geopolitics":       "",
+        "corporate":         "",
+        "macro_calendar":    "",
+        "top5":              "",
+        "pitch_equity":      "",
+        "pitch_fi":          "",
     }
 
     marker_map = {
@@ -204,7 +232,9 @@ def parse_claude_response(text: str) -> dict:
         "CORPORATE":         "corporate",
         "MACRO_CALENDAR":    "macro_calendar",
         "TOP5":              "top5",
-        "DAILY_PITCH":       "daily_pitch",
+        "PITCH_EQUITY":      "pitch_equity",
+        "PITCH_FI":          "pitch_fi",
+        "DAILY_PITCH":       "pitch_equity",   # backward-compat: old cached reports
     }
 
     # Normalise: strip any preamble before the first recognised marker.
@@ -223,7 +253,7 @@ def parse_claude_response(text: str) -> dict:
         key = marker_map.get(marker.strip())
         if key:
             # Sections that are free-form prose (not bullet lists) — keep all lines as-is
-            _freeform = {"regime", "macro_calendar", "daily_pitch"}
+            _freeform = {"regime", "macro_calendar", "pitch_equity", "pitch_fi"}
             if key in _freeform:
                 sections[key] = content.strip()
             else:
@@ -253,6 +283,7 @@ def _fallback_summary() -> dict:
         "geopolitics": "",
         "corporate": "",
         "macro_calendar": "",
-        "top5": "",
-        "daily_pitch": "",
+        "top5":           "",
+        "pitch_equity":   "",
+        "pitch_fi":       "",
     }

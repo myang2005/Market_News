@@ -197,16 +197,17 @@
     }
   ],
   "summary": {
-    "regime": "Tech strength, inflation concerns, Fed on hold",
-    "executive_summary": "- U.S. equities extended gains Friday with the S&P 500, Nasdaq, and Dow all moving higher; the Nikkei surged 2.53% overnight, signaling risk appetite in Asia.\n- The VIX fell 2.67% to 15.32, indicating lower expected volatility and investor confidence, though consumer sentiment headlines suggest underlying unease about inflation and cost of living.\n- Treasury yields barely budged\u2014the 10Y held at 4.45%\u2014while the dollar weakened slightly; gold jumped 1.36%, a typical haven bid when inflation fears persist.\n- Jobs week begins this week in the U.S., culminating in Friday's payroll report; any sign of labor market softness could open the door for Fed rate cuts later in the year.\n- Oil fell 1.77% on the day; geopolitical tensions (referenced in headlines) are keeping energy prices elevated but volatile.",
-    "overnight": "- Asia rallied hard: Japan's Nikkei up 2.53%, China's MSCI up 0.20%; broad risk appetite after a strong U.S. close.\n- Europe flat to slightly down: FTSE 100 fell 0.16%, DAX essentially flat at +0.05%, suggesting caution ahead of the U.S. jobs week.\n- U.S. Treasury futures likely bid slightly; 10Y yield flat Friday and gold strength suggest a bid for safety, but equities also rallying means no real flight-to-quality panic.\n- Dollar weakened overnight (DXY -0.11%), with EUR/USD and GBP/USD both up about 0.21\u20130.30%; softer dollar often accompanies risk-on moves.",
-    "central_banks": "- The Federal Reserve is currently in a holding pattern with rates at the upper end of expectations (3.50\u20133.75% range implied from Treasury data); the market is pricing in the possibility of rate cuts in late 2026 if inflation cools and labor data softens.\n- Jobs week is critical: any disappointment in employment could strengthen the case for cuts as soon as July, while a strong report would likely keep the Fed on pause longer.\n- The Bank of Japan (BOJ) likely remains accommodative, supporting the Nikkei's overnight strength; the yen weakened slightly (USD/JPY at 159.3), consistent with carry-trade interest.\n- The ECB faces mixed signals: European growth is sluggish (Canada's recession noted in headlines), but sticky inflation from geopolitical pressures (oil, conflict-driven costs) may keep officials cautious.",
-    "rates_credit": "- The 10Y Treasury yield held flat at 4.453%, despite strong equity moves; this suggests the market is not yet pricing in major rate-cut expectations but is watching labor data carefully.\n- The 30Y rose 1.6 bps (4.993%), a subtle steepening signal that long-end investors are pricing in structural inflation rather than imminent Fed cuts.\n- Short-end rates (13-week T-bill) fell 0.6 bps, consistent with a small bid for safety and some expectation that the Fed may not tighten further.",
-    "geopolitics": "- Inflation pressures tied to global conflict remain a key theme (per headline commentary), keeping oil elevated despite the 1.77% decline; any escalation could reverse recent energy weakness.\n- Trade policy uncertainty under the current U.S. administration continues to overhang markets; one headline explicitly noted this as a headwind to inflation control, though this is more opinion than fact.\n- Energy supply remains tight globally, with Brent crude still above $92/barrel; OPEC+ actions and Middle East tensions are live factors affecting both oil and inflation.\n- Canada's technical recession signals broader North American weakness; this could spill into U.S. consumer and employment data, a risk heading into Friday's jobs report.",
-    "corporate": "- Nvidia remains a focal point: the stock is up 15.44% year-to-date, and the company released a new product Friday that is being called a \"game-changer\"\u2014AI hardware strength is a structural support for mega-cap tech.\n- Dell and other hardware manufacturers surged Friday along with the broader market; the AI cycle is broadening beyond pure semiconductor plays into infrastructure and enterprise equipment.\n- Sentiment surveys are flagging weakness (S&P Global data mentioned in headlines), and consumer confidence is at new lows\u2014a risk signal for earnings if spending contracts in coming quarters.\n- Watch for any earnings guidance tied to labor costs or supply-chain inflation during the coming earnings season.",
-    "macro_calendar": "No major releases scheduled today. The full jobs week (ADP, jobless claims, ISM Services, and the Bureau of Labor Statistics employment report) begins Tuesday and culminates Friday, June 6.",
-    "top5": "1. Nikkei's 2.53% surge overnight and broader Asia strength signal continued risk appetite; watch if this holds through U.S. cash open or if it fades as the week progresses.\n2. Jobs week begins Tuesday; Friday's payroll report is the marquee event\u2014any miss could trigger a 30+ bps repricing in Fed rate-cut expectations for H2 2026.\n3. Nvidia's new AI product and the continued strength in large-cap tech (Nasdaq up 0.36%) are driving equity gains, but investor sentiment surveys show cracks in consumer confidence\u2014a divergence worth watching.\n4. Oil declined 1.77% on Friday but remains elevated around $92/barrel; geopolitical risks tied to conflicts are keeping energy prices vulnerable to sudden spikes.\n5. Gold jumped 1.36% Friday despite equity strength, signaling that inflation concerns and geopolitical uncertainty are still on investors' minds; watch this as a gauge of underlying risk appetite.",
-    "daily_pitch": "TRADE: Long 10Y Treasury\nDIRECTION: Long\nRATIONALE: The 10Y yield held flat at 4.45% even as equities rallied and the VIX fell sharply, suggesting a rare moment where investors are buying both stocks and bonds. Consumer sentiment has fallen to new lows and inflation pressures are blamed on geopolitical factors (which could ease), not core economic overheating. Jobs week is the key event; if Friday's payroll misses expectations, the 10Y could fall 20\u201330 bps in a single session as the Fed cut narrative accelerates. Current yield offers a 4.45% entry with asymmetric downside if labor data disappoints.\nRISK: A stronger-than-expected jobs report could send Treasury yields sharply higher as rate-cut expectations evaporate, pushing long-dated bonds lower."
+    "regime": "Tech and Japan-led rally, rates stable, sentiment cautious",
+    "executive_summary": "- U.S. equities posted modest gains Friday (S&P 500 +0.22%, Nasdaq +0.36%), with the Dow outperforming (+0.72%) while small caps lagged (Russell 2000 -0.59%); VIX fell 2.67% to 15.32, suggesting a slight easing of fear.\n- The Nikkei surged 2.53% overnight, marking a strong start to the week in Asia; broader emerging markets were flat, and European indices showed minimal movement.\n- Treasury yields were nearly flat Friday (10Y at 4.453%, 30Y slightly higher at 4.993%), while the dollar weakened modestly (DXY -0.11%) and gold rallied 1.36% \u2014 moves that may reflect mixed sentiment on growth and inflation.\n- Consumer sentiment fell to a new low according to headlines, with cost of living cited as a \"first-order\" worry; this backdrop suggests investors are balancing resilience in large-cap tech against caution on the consumer and sticky inflation.\n- Jobs week begins this week with the nonfarm payrolls report due Friday \u2014 a key test of labor market momentum that could inform rate expectations.",
+    "overnight": "- Japan's Nikkei 225 jumped 2.53% (+1,636 points) to 6.633k, marking the strongest move among major Asian indices; this may reflect relief on yen weakness (USD/JPY fell 0.19% to 159.3) or broader risk appetite.\n- European bourses were subdued: FTSE 100 slipped 0.16%, DAX was nearly flat (+0.05%); MSCI China rose 0.20%, and MSCI EM was flat, suggesting no major overnight catalyst in Europe or China.\n- Crude oil fell 1.77% to $92.05/bbl; natural gas was marginally higher at $3.29 (+0.15%), indicating modest pressure on energy rather than a supply shock.\n- Gold rallied 1.36% to $4,560, the largest move among commodities; this could suggest investor appetite for safe havens amid soft sentiment headlines or uncertainty ahead of jobs data.",
+    "central_banks": "- No central bank officials spoke or released statements on May 29 or over the weekend (based on headline coverage provided).\n- Fed funds futures continue to price the next policy decision in the context of sticky inflation and mixed labor data, but without new guidance, market expectations likely remain anchored to recent dot-plot signals.\n- The headline reference to Jeremy Siegel discussing \"the Fed's next move\" in the context of AI-driven markets and inflation pressures suggests the investment community is watching for signs of policy persistence, but no concrete Fed action is scheduled today.",
+    "rates_credit": "- The 10Y Treasury yield was essentially flat at 4.453% (-0.04 bps Friday), while the 30Y yield rose 1.6 bps to 4.993% \u2014 a move that may reflect a slight steepening of the long end or shifting expectations for long-run inflation.\n- The 13-week T-Bill yield fell 0.6 bps to 3.588%, which may suggest modest near-term demand for shorter duration as investors position ahead of jobs data.\n- The muted move in core yields despite the consumer sentiment weakness and headlines on inflation suggests markets are still digesting the mix of sticky prices and cautious growth \u2014 neither a clear catalyst for a large repricing yet.",
+    "geopolitics": "- One headline references \"global conflict\" in connection with oil prices and inflation pressures, but no specific new geopolitical development is detailed in the provided coverage.\n- Energy prices remain elevated; ongoing geopolitical tension may be a factor, but crude's 1.77% decline Friday suggests no acute supply shock over the weekend.\n- Canada entered a technical recession according to headlines, with spending declines; this may weigh on North American sentiment and could affect cross-border investor positioning, though it is not a direct U.S. market catalyst.\n- No trade policy announcements or tariff-related headlines appear in the provided set, indicating this theme was quiet over the weekend.",
+    "corporate": "- Nvidia was highlighted as having a \"game-changer\" product; the stock is up ~15.44% year to date, and the AI sector more broadly appears to be driving outperformance in the Nasdaq (+0.36% Friday).\n- Dell soared on Friday, contributing to the broad market rally; the headline mentions it as a standout performer, though no specific catalyst is provided \u2014 may reflect chip supply optimism or corporate spending recovery.\n- S&P Global (SPGI) slid on investor sentiment weakness, per a headline citing a report from Impax Asset Management on declining sentiment; this suggests some rotation away from sentiment-sensitive or growth-oriented names into more defensive positioning.\n- No earnings surprises or guidance cuts are flagged in the provided coverage, indicating the Friday session was not driven by a corporate earnings catalyst.",
+    "macro_calendar": "No major releases scheduled today (Monday, June 1, 2026). The calendar picks up midweek, with nonfarm payrolls and related labor data due Friday, June 5.",
+    "top5": "1. Consumer sentiment hit a new low over the weekend, with cost of living cited as the primary worry \u2014 this could signal weakening demand and may underpin a defensive posture if the trend continues into corporate earnings and consumption data.\n2. Nikkei's 2.53% overnight surge suggests risk appetite in Asia despite broader caution; markets may be watching whether this carries into U.S. trading or if it reflects Japan-specific positioning around yen weakness.\n3. Nvidia's latest product launch was described as a \"game-changer,\" and the stock remains a key bellwether for AI momentum and tech valuations \u2014 any follow-up news on adoption or competition could move the broader market.\n4. Canada's technical recession entry signals potential spillover risks for North American growth and could weigh on sentiment if U.S. labor data this week comes in softer than expected.\n5. Jobs week begins with Friday's nonfarm payrolls as the headline risk \u2014 a stronger-than-expected print could support equity risk-on sentiment, while a miss could trigger repricing in rate expectations and a hunt for duration in bonds.",
+    "pitch_equity": "SETUP: Long Dell (DELL)\nCATALYST: Dell soared on Friday as a standout performer; follow-through strength could extend if management commentary this week signals sustained enterprise demand for AI-related infrastructure or server capacity.\nWHY: Friday's outperformance amid broad market caution may suggest institutional rotation into hardware beneficiaries of AI spending; if this reflects a shift from sentiment-driven to fundamentals-driven positioning, Dell could continue to benefit through jobs week.\nINVALIDATION: A broader equity selloff on weak consumer data or a disappointing outlook from chip or enterprise equipment peers would likely reverse the move.\nHORIZON: Through end of week",
+    "pitch_fi": "SETUP: Long 10Y Treasury\nCATALYST: Friday's nonfarm payrolls report is the key near-term event \u2014 a weaker-than-expected print could push expectations for rate cuts higher and send yields lower, rewarding duration holders.\nWHY: The 10Y yield has been range-bound near 4.45% despite mixed growth signals and consumer sentiment weakness; if jobs data disappoints, the setup may benefit from a rerating of the Fed's policy path. Current levels may offer attractive entry if the labor market shows cracks.\nINVALIDATION: A payrolls print above 250k or hotter-than-expected average hourly earnings would likely push yields higher and undermine the long duration case.\nHORIZON: Into Friday's jobs report"
   },
   "macro_calendar": [
     {
@@ -229,13 +230,6 @@
       "importance": "\ud83d\udd34 High",
       "note": "\u2014",
       "previous": "84.6"
-    },
-    {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing Employment  (May)",
-      "importance": "\ud83d\udfe1 Medium",
-      "note": "\u2014",
-      "previous": "46.4"
     }
   ],
   "earnings_today": [],
@@ -250,114 +244,74 @@
     },
     {
       "time (ET)": "10:00",
-      "event": "ISM Manufacturing PMI  (May)",
+      "event": "JOLTS Job Openings  (Apr)",
       "importance": "\ud83d\udd34 High",
-      "note": "Factory sector health; >50 = expansion",
-      "previous": "52.7",
-      "date": "Mon Jun 01"
-    },
-    {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing Prices  (May)",
-      "importance": "\ud83d\udd34 High",
-      "note": "\u2014",
-      "previous": "84.6",
-      "date": "Mon Jun 01"
-    },
-    {
-      "time (ET)": "09:45",
-      "event": "S&P Global Manufacturing PMI  (May)",
-      "importance": "\ud83d\udd34 High",
-      "note": "Private-sector factory activity gauge",
-      "previous": "54.5",
-      "date": "Tue Jun 02"
-    },
-    {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing PMI  (May)",
-      "importance": "\ud83d\udd34 High",
-      "note": "Factory sector health; >50 = expansion",
-      "previous": "52.7",
-      "date": "Tue Jun 02"
-    },
-    {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing Prices  (May)",
-      "importance": "\ud83d\udd34 High",
-      "note": "\u2014",
-      "previous": "84.6",
+      "note": "Unfilled jobs count; measures labor market tightness",
+      "previous": "6.866M",
       "date": "Tue Jun 02"
     },
     {
       "time (ET)": "09:45",
-      "event": "S&P Global Manufacturing PMI  (May)",
+      "event": "S&P Global Services PMI  (May)",
       "importance": "\ud83d\udd34 High",
-      "note": "Private-sector factory activity gauge",
-      "previous": "54.5",
+      "note": "Private-sector services activity gauge",
+      "previous": "50.9",
       "date": "Wed Jun 03"
     },
     {
       "time (ET)": "10:00",
-      "event": "ISM Manufacturing PMI  (May)",
-      "importance": "\ud83d\udd34 High",
-      "note": "Factory sector health; >50 = expansion",
-      "previous": "52.7",
-      "date": "Wed Jun 03"
-    },
-    {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing Prices  (May)",
+      "event": "ISM Non-Manufacturing Prices  (May)",
       "importance": "\ud83d\udd34 High",
       "note": "\u2014",
-      "previous": "84.6",
+      "previous": "70.7",
       "date": "Wed Jun 03"
     },
     {
-      "time (ET)": "09:45",
-      "event": "S&P Global Manufacturing PMI  (May)",
-      "importance": "\ud83d\udd34 High",
-      "note": "Private-sector factory activity gauge",
-      "previous": "54.5",
-      "date": "Thu Jun 04"
-    },
-    {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing PMI  (May)",
-      "importance": "\ud83d\udd34 High",
-      "note": "Factory sector health; >50 = expansion",
-      "previous": "52.7",
-      "date": "Thu Jun 04"
-    },
-    {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing Prices  (May)",
+      "time (ET)": "08:15",
+      "event": "ADP Nonfarm Employment Change  (May)",
       "importance": "\ud83d\udd34 High",
       "note": "\u2014",
-      "previous": "84.6",
+      "previous": "109K",
+      "date": "Wed Jun 03"
+    },
+    {
+      "time (ET)": "10:30",
+      "event": "Crude Oil Inventories",
+      "importance": "\ud83d\udd34 High",
+      "note": "Weekly U.S. oil stock change; moves crude prices",
+      "previous": "-3.327M",
+      "date": "Wed Jun 03"
+    },
+    {
+      "time (ET)": "08:30",
+      "event": "Initial Jobless Claims",
+      "importance": "\ud83d\udd34 High",
+      "note": "Weekly new unemployment filings; real-time labor signal",
+      "previous": "215K",
       "date": "Thu Jun 04"
     },
     {
-      "time (ET)": "09:45",
-      "event": "S&P Global Manufacturing PMI  (May)",
+      "time (ET)": "08:30",
+      "event": "Average Hourly Earnings (MoM)  (May)",
       "importance": "\ud83d\udd34 High",
-      "note": "Private-sector factory activity gauge",
-      "previous": "54.5",
+      "note": "Wage growth; signals inflation pressure from labor",
+      "previous": "0.2%",
       "date": "Fri Jun 05"
     },
     {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing PMI  (May)",
+      "time (ET)": "08:30",
+      "event": "Nonfarm Payrolls  (May)",
       "importance": "\ud83d\udd34 High",
-      "note": "Factory sector health; >50 = expansion",
-      "previous": "52.7",
+      "note": "Monthly jobs added ex-farm; biggest labor market mover",
+      "previous": "115K",
       "date": "Fri Jun 05"
     },
     {
-      "time (ET)": "10:00",
-      "event": "ISM Manufacturing Prices  (May)",
+      "time (ET)": "08:30",
+      "event": "Unemployment Rate  (May)",
       "importance": "\ud83d\udd34 High",
-      "note": "\u2014",
-      "previous": "84.6",
+      "note": "Headline jobless rate; watched alongside NFP",
+      "previous": "4.3%",
       "date": "Fri Jun 05"
     }
   ],

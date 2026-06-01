@@ -217,22 +217,22 @@ def build_price_table(prices: dict, names: list) -> pd.DataFrame:
         d = prices.get(name)
         if not d:
             continue
-        close = d["close"]
-        chg   = d["change"]
-        pct   = d["pct_change"]
+        chg_str, pct_str = market_data.format_change(name, d["change"], d["pct_change"])
         rows.append({
             "Market":   name,
-            "Close":    market_data.format_value(name, close),
-            "Change":   f"+{chg:.4g}" if chg >= 0 else f"{chg:.4g}",
-            "% Change": f"+{pct:.2f}%" if pct >= 0 else f"{pct:.2f}%",
+            "Close":    market_data.format_value(name, d["close"]),
+            "Change":   chg_str,
+            "% Change": pct_str,
         })
     return pd.DataFrame(rows)
 
 def style_df(df: pd.DataFrame):
     def hl(val):
-        if isinstance(val, str) and val.startswith("+"):
+        if not isinstance(val, str) or val == "—":
+            return ""
+        if val.startswith("+"):
             return "color: #059669; font-weight: 700"
-        if isinstance(val, str) and val.startswith("-"):
+        if val.startswith("-"):
             return "color: #dc2626; font-weight: 700"
         return ""
     return df.style.map(hl, subset=["% Change", "Change"])
@@ -596,8 +596,7 @@ st.divider()
 
 section_label("Today's Economic Calendar")
 
-<<<<<<< HEAD
-_CAL_COLS      = ["time (ET)", "event", "importance", "note", "previous"]
+_CAL_COLS      = ["time (ET)", "event", "note", "previous"]
 _CAL_IS_STUB   = (
     len(scraped_calendar) == 1
     and "unavailable" in scraped_calendar[0].get("event", "").lower()
@@ -609,19 +608,6 @@ if scraped_calendar and not _CAL_IS_STUB:
     st.dataframe(_cal_df, hide_index=True)
 else:
     # Fall back to AI-inferred calendar text
-=======
-# Prefer the live scraped calendar; fall back to the AI-generated text table
-_cal_is_stub = (
-    len(scraped_calendar) == 1
-    and "unavailable" in scraped_calendar[0].get("event", "").lower()
-)
-if scraped_calendar and not _cal_is_stub:
-    display_cols = ["time (ET)", "event", "period", "actual", "forecast", "previous", "importance"]
-    cal_df = pd.DataFrame(scraped_calendar)[[c for c in display_cols if c in pd.DataFrame(scraped_calendar).columns]]
-    st.dataframe(cal_df, hide_index=True)
-else:
-    # Fall back to AI-inferred calendar
->>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
     ai_calendar = summary.get("macro_calendar", "")
     if ai_calendar and "no major releases" not in ai_calendar.lower():
         cal_rows = []
@@ -631,19 +617,11 @@ else:
                 continue
             parts = [p.strip() for p in line.split("|")]
             if len(parts) == 3:
-<<<<<<< HEAD
                 cal_rows.append({"Time": parts[0], "Event": parts[1], "Note": parts[2]})
             elif len(parts) == 2:
                 cal_rows.append({"Time": parts[0], "Event": parts[1], "Note": ""})
             else:
                 cal_rows.append({"Time": "—", "Event": line, "Note": ""})
-=======
-                cal_rows.append({"Time": parts[0], "Event": parts[1], "Why It Matters": parts[2]})
-            elif len(parts) == 2:
-                cal_rows.append({"Time": parts[0], "Event": parts[1], "Why It Matters": ""})
-            else:
-                cal_rows.append({"Time": "—", "Event": line, "Why It Matters": ""})
->>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
         if cal_rows:
             st.dataframe(pd.DataFrame(cal_rows), hide_index=True)
         else:
@@ -654,7 +632,6 @@ else:
 if earnings_today:
     st.divider()
     section_label("Earnings Today — Priority Watchlist")
-<<<<<<< HEAD
     _et_df = pd.DataFrame(earnings_today)
     _et_cols = [c for c in ["company", "ticker", "date", "eps_est", "rev_est"] if c in _et_df.columns]
     st.dataframe(_et_df[_et_cols], hide_index=True)
@@ -665,26 +642,13 @@ if is_monday:
     st.caption("High-impact scheduled events for the week ahead.")
     if week_ahead:
         _wa_df = pd.DataFrame(week_ahead)
-        _wa_cols = [c for c in ["date", "event", "importance", "note", "previous"] if c in _wa_df.columns]
+        _wa_cols = [c for c in ["date", "event", "note", "previous"] if c in _wa_df.columns]
         st.dataframe(_wa_df[_wa_cols], hide_index=True)
     if earnings_this_week:
         st.markdown("**Priority earnings reporters this week:**")
         _ew_df = pd.DataFrame(earnings_this_week)
         _ew_cols = [c for c in ["company", "ticker", "date", "eps_est", "rev_est"] if c in _ew_df.columns]
         st.dataframe(_ew_df[_ew_cols], hide_index=True)
-=======
-    st.dataframe(pd.DataFrame(earnings_today), hide_index=True)
-
-if is_monday:
-    st.divider()
-    section_label("Week Ahead — Key Events This Week")
-    st.caption("It's Monday — here's what to watch across the trading week.")
-    if week_ahead:
-        st.dataframe(pd.DataFrame(week_ahead), hide_index=True)
-    if earnings_this_week:
-        st.markdown("**Priority earnings reporters this week:**")
-        st.dataframe(pd.DataFrame(earnings_this_week), hide_index=True)
->>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
 
 st.divider()
 
@@ -772,52 +736,109 @@ st.divider()
 
 # ── Daily Pitch ───────────────────────────────────────────────────────────────
 
-section_label("Daily Pitch")
-pitch = summary.get("daily_pitch", "")
-if pitch:
-    fields = {"TRADE": "", "DIRECTION": "", "RATIONALE": "", "RISK": ""}
-    for key in fields:
-        m = _re.search(rf'{key}:\s*(.+?)(?=\n[A-Z]+:|\Z)', pitch, _re.DOTALL)
-        if m:
-            fields[key] = m.group(1).strip()
+_PITCH_ALIASES: dict[str, list[str]] = {
+    "SETUP":        ["SETUP", "TRADE"],
+    "CATALYST":     ["CATALYST"],
+    "WHY":          ["WHY IT MATTERS", "WHY", "RATIONALE"],
+    "INVALIDATION": ["INVALIDATION", "RISK"],
+    "HORIZON":      ["HORIZON", "TIME HORIZON"],
+}
+_PITCH_ALL_LABELS = [a for aliases in _PITCH_ALIASES.values() for a in aliases]
+_PITCH_LABEL_PAT  = "|".join(_re.escape(a) for a in _PITCH_ALL_LABELS)
 
-    direction = fields["DIRECTION"].upper()
-    if direction == "LONG":
-        border_color = "#059669"
-        bg_color     = "#f0fdf4"
-        chip_class   = "chip chip-green"
-    elif direction == "SHORT":
-        border_color = "#e11d48"
-        bg_color     = "#fff7f9"
-        chip_class   = "chip chip-red"
+
+def _parse_pitch(pitch: str) -> dict[str, str]:
+    fields = {k: "" for k in _PITCH_ALIASES}
+    for canon, aliases in _PITCH_ALIASES.items():
+        for alias in aliases:
+            m = _re.search(
+                rf'{_re.escape(alias)}:\s*(.+?)(?=\n(?:{_PITCH_LABEL_PAT}):|\Z)',
+                pitch, _re.DOTALL | _re.IGNORECASE,
+            )
+            if m:
+                fields[canon] = m.group(1).strip()
+                break
+    return fields
+
+
+def _render_pitch_card(pitch: str, unavailable_msg: str = "Pitch unavailable — set ANTHROPIC_API_KEY in .env"):
+    if not pitch:
+        st.caption(unavailable_msg)
+        return
+
+    fields = _parse_pitch(pitch)
+
+    if not any(fields.values()):
+        # Parsing failed — show raw prose so nothing is silently lost
+        st.markdown(
+            "<div style='background:#f0f4ff; border-left:5px solid #102a73; "
+            "border-radius:10px; padding:20px 24px;'>"
+            + "".join(
+                f"<p style='margin:4px 0; color:#374151; line-height:1.6;'>{safe_md(ln)}</p>"
+                for ln in pitch.strip().splitlines() if ln.strip()
+            )
+            + "</div>",
+            unsafe_allow_html=True,
+        )
+        return
+
+    setup_upper = fields["SETUP"].upper()
+    if setup_upper.startswith("LONG"):
+        border_color, bg_color, direction_label, chip_class = "#059669", "#f0fdf4", "LONG",  "chip chip-green"
+    elif setup_upper.startswith("SHORT"):
+        border_color, bg_color, direction_label, chip_class = "#e11d48", "#fff7f9", "SHORT", "chip chip-red"
     else:
-        border_color = "#102a73"
-        bg_color     = "#f0f4ff"
-        chip_class   = "chip"
+        border_color, bg_color, direction_label, chip_class = "#102a73", "#f0f4ff", "",      "chip"
+
+    direction_chip = (
+        f"<span class='{chip_class}' style='font-size:0.75rem; vertical-align:middle; margin-left:8px;'>"
+        f"{direction_label}</span>"
+    ) if direction_label else ""
+
+    def _row(label: str, text: str, muted: bool = False) -> str:
+        lc = "#6b7280" if muted else "#1f2937"
+        tc = "#6b7280" if muted else "#374151"
+        fs = "0.83rem" if muted else "0.92rem"
+        return (
+            f"<div style='margin:10px 0 0 0;'>"
+            f"<span style='font-weight:700;color:{lc};font-size:0.78rem;"
+            f"text-transform:uppercase;letter-spacing:0.06em;'>{label}</span>"
+            f"<p style='margin:3px 0 0 0;color:{tc};font-size:{fs};line-height:1.6;'>"
+            f"{safe_md(text)}</p></div>"
+        )
+
+    rows_html = ""
+    if fields["CATALYST"]:
+        rows_html += _row("Catalyst", fields["CATALYST"])
+    if fields["WHY"]:
+        rows_html += _row("Analysis", fields["WHY"])
+    if fields["INVALIDATION"]:
+        rows_html += _row("Risk", fields["INVALIDATION"], muted=True)
+    if fields["HORIZON"]:
+        rows_html += (
+            f"<div style='margin:14px 0 0 0;'>"
+            f"<span style='font-size:0.78rem;color:#6b7280;'>⏱ Time horizon: "
+            f"<strong style='color:#374151;'>{safe_md(fields['HORIZON'])}</strong></span></div>"
+        )
 
     st.markdown(
-        f"<div style='"
-        f"background:{bg_color}; "
-        f"border: 1px solid {border_color}33; "
-        f"border-left: 5px solid {border_color}; "
-        f"border-radius: 10px; "
-        f"padding: 20px 24px; "
-        f"margin-bottom: 12px;'>"
-        f"<div style='font-size:1.25rem; font-weight:700; color:{border_color}; margin-bottom:8px;'>"
-        f"{safe_md(fields['TRADE'])} "
-        f"<span class='{chip_class}' style='font-size:0.78rem; vertical-align:middle;'>"
-        f"{fields['DIRECTION']}</span>"
-        f"</div>"
-        f"<p style='margin:10px 0 4px 0; font-weight:600; color:#1f2937;'>Why:</p>"
-        f"<p style='margin:0 0 12px 0; color:#1f2937; line-height:1.6;'>{safe_md(fields['RATIONALE'])}</p>"
-        f"<p style='margin:0; font-size:0.85rem; color:#6b7280;'>"
-        f"<strong style='color:#1f2937;'>Risk:</strong> {safe_md(fields['RISK'])}"
-        f"</p>"
-        f"</div>",
+        f"<div style='background:{bg_color};border:1px solid {border_color}33;"
+        f"border-left:5px solid {border_color};border-radius:10px;padding:20px 24px;'>"
+        f"<div style='font-size:1.2rem;font-weight:700;color:{border_color};'>"
+        f"{safe_md(fields['SETUP'])}{direction_chip}</div>"
+        f"{rows_html}</div>",
         unsafe_allow_html=True,
     )
-else:
-    st.caption("Daily pitch unavailable — set ANTHROPIC_API_KEY in .env")
+
+
+section_label("Daily Pitch")
+_col_eq, _col_fi = st.columns(2)
+with _col_eq:
+    st.markdown("**Equities**")
+    _render_pitch_card(summary.get("pitch_equity", ""))
+with _col_fi:
+    st.markdown("**Fixed Income / FX**")
+    _render_pitch_card(summary.get("pitch_fi", ""))
 
 st.divider()
 

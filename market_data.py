@@ -139,11 +139,11 @@ def get_yield_spread(prices: dict) -> Optional[float]:
 
 
 def format_value(name: str, value: float) -> str:
-    """Format a price value for display — always use comma notation, never scientific."""
+    """Format a price level for display — comma notation, asset-class-aware decimals."""
     if "Treasury" in name or "T-Bill" in name:
         return f"{value:.2f}%"
     if name == "VIX":
-        return f"{value:.2f}"          # VIX is an index level, not a %
+        return f"{value:.2f}"
     if name == "DXY":
         return f"{value:.2f}"
     if name in ("EUR/USD", "GBP/USD"):
@@ -159,3 +159,48 @@ def format_value(name: str, value: float) -> str:
     if value >= 1000:
         return f"{value:,.2f}"
     return f"{value:.2f}"
+
+
+def format_change(name: str, change: float, pct: float) -> tuple[str, str]:
+    """
+    Return (change_str, pct_str) formatted per asset class.
+
+    Rules:
+    - Treasury yields  : change in basis points (e.g. "-0.4 bp"); pct as yield-level % change.
+    - EUR/USD, GBP/USD : change as 4dp absolute (e.g. "+0.0035"); pct to 2dp.
+    - USD/JPY, DXY     : change as 2dp absolute; pct to 2dp.
+    - Equities/indexes : change as absolute with smart decimals; pct to 2dp.
+    - Commodities      : change as dollar amount 2dp; pct to 2dp.
+    - Bitcoin          : change as signed integer with commas; pct to 2dp.
+    All columns always show a real value — "—" is never returned.
+    """
+    s_chg = "+" if change >= 0 else ""
+    s_pct = "+" if pct    >= 0 else ""
+    pct_str = f"{s_pct}{pct:.2f}%"
+
+    # ── Treasury yields: basis points in Change, % change of yield level in % Change
+    if "Treasury" in name or "T-Bill" in name:
+        bps = change * 100
+        sb  = "+" if bps >= 0 else ""
+        return f"{sb}{bps:.1f} bp", pct_str
+
+    # ── FX major pairs: 4dp absolute change; % change in % Change ─────────────
+    if name in ("EUR/USD", "GBP/USD"):
+        return f"{s_chg}{change:.4f}", pct_str
+
+    # ── USD/JPY and DXY: 2dp absolute ─────────────────────────────────────────
+    if name in ("USD/JPY", "DXY"):
+        return f"{s_chg}{change:.2f}", pct_str
+
+    # ── Bitcoin: signed integer with thousands separator ──────────────────────
+    if name == "Bitcoin":
+        return f"{change:+,.0f}", pct_str
+
+    # ── Commodities: 2dp dollar change ────────────────────────────────────────
+    if name in ("WTI Crude", "Brent Crude", "Gold", "Natural Gas"):
+        return f"{s_chg}{change:.2f}", pct_str
+
+    # ── Equities / indexes: 0dp for large swings (DJIA), 2dp otherwise ────────
+    if abs(change) >= 100:
+        return f"{s_chg}{change:,.0f}", pct_str
+    return f"{s_chg}{change:.2f}", pct_str
