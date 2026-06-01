@@ -5,6 +5,15 @@ Priority sources:
   1. Investing.com  — economic calendar (same data that powers MarketWatch)
   2. yfinance       — earnings dates for the priority watchlist
   3. NewsAPI        — market headlines (handled in news_data.py)
+<<<<<<< HEAD
+=======
+
+Note: MarketWatch requires captcha-verified JS rendering and blocks all
+automated access. Seeking Alpha's earnings API is behind a login wall.
+Both sites source their calendar data from the same underlying vendors
+(Refinitiv / LSEG) that Investing.com uses, so Investing.com gives us
+equivalent coverage without the restrictions.
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
 """
 
 import requests
@@ -26,6 +35,7 @@ INVESTING_HEADERS = {
     "Referer": "https://www.investing.com/economic-calendar/",
 }
 
+<<<<<<< HEAD
 IMPORTANCE_MAP = {3: "🔴 High", 2: "🟡 Medium", 1: "⚪ Low", 0: "⚪ Low"}
 USA_COUNTRY_CODE = "5"
 
@@ -105,11 +115,23 @@ def get_event_note(event_name: str) -> str:
             return desc
     return "—"
 
+=======
+# Importance: number of bull icons on Investing.com (3 = high impact)
+IMPORTANCE_MAP = {3: "🔴 High", 2: "🟡 Medium", 1: "⚪ Low", 0: "⚪ Low"}
+
+# Only show USA events (country code 5) by default
+USA_COUNTRY_CODE = "5"
+
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
 
 def scrape_investing_calendar(target_date: date, countries: list = None) -> list[dict]:
     """
     Scrape Investing.com economic calendar for a given date.
+<<<<<<< HEAD
     Returns events with: time (ET), event, importance, note, previous.
+=======
+    Returns list of event dicts: time, event, period, actual, forecast, previous, importance.
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
     Falls back to empty list on any error.
     """
     if countries is None:
@@ -118,7 +140,11 @@ def scrape_investing_calendar(target_date: date, countries: list = None) -> list
     data_payload = {
         "dateFrom": str(target_date),
         "dateTo":   str(target_date),
+<<<<<<< HEAD
         "timeZone": "8",
+=======
+        "timeZone": "8",           # ET offset
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
         "currentTab": "today",
         "limit_from": 0,
     }
@@ -145,6 +171,7 @@ def scrape_investing_calendar(target_date: date, countries: list = None) -> list
 
         events = []
         for row in rows:
+<<<<<<< HEAD
             time_td   = row.find("td", class_="time")
             event_td  = row.find("td", class_="event")
             prev_td   = row.find("td", class_="prev")
@@ -157,10 +184,29 @@ def scrape_investing_calendar(target_date: date, countries: list = None) -> list
             bull_icons       = row.find_all("i", class_="grayFullBullishIcon")
             importance_level = len(bull_icons)
             importance       = IMPORTANCE_MAP.get(importance_level, "⚪ Low")
+=======
+            time_td    = row.find("td", class_="time")
+            event_td   = row.find("td", class_="event")
+            actual_td  = row.find("td", class_="actual")
+            fore_td    = row.find("td", class_="forecast")
+            prev_td    = row.find("td", class_="prev")
+
+            # Period lives inside the event cell as a smaller span
+            period_span = event_td.find("span", class_="smallGray") if event_td else None
+
+            event_name = event_td.get_text(strip=True) if event_td else ""
+            if period_span:
+                event_name = event_name.replace(period_span.get_text(strip=True), "").strip()
+
+            # Importance = count of filled bull icons
+            bull_icons = row.find_all("i", class_="grayFullBullishIcon")
+            importance_level = len(bull_icons)
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
 
             events.append({
                 "time (ET)":  time_td.get_text(strip=True) if time_td else "—",
                 "event":      event_name,
+<<<<<<< HEAD
                 "importance": importance,
                 "note":       get_event_note(event_name),
                 "previous":   prev_td.get_text(strip=True) if prev_td else "—",
@@ -168,6 +214,19 @@ def scrape_investing_calendar(target_date: date, countries: list = None) -> list
             })
 
         events.sort(key=lambda e: (-e["_level"], e["time (ET)"]))
+=======
+                "period":     period_span.get_text(strip=True) if period_span else "—",
+                "actual":     actual_td.get_text(strip=True) if actual_td else "—",
+                "forecast":   fore_td.get_text(strip=True) if fore_td else "—",
+                "previous":   prev_td.get_text(strip=True) if prev_td else "—",
+                "importance": IMPORTANCE_MAP.get(importance_level, "⚪ Low"),
+                "_level":     importance_level,
+            })
+
+        # Sort by importance desc, then time
+        events.sort(key=lambda e: (-e["_level"], e["time (ET)"]))
+        # Remove internal sort key
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
         for e in events:
             e.pop("_level", None)
 
@@ -196,6 +255,7 @@ EARNINGS_WATCHLIST = [
     # Magnificent 7
     "AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA",
     # Financials
+<<<<<<< HEAD
     "JPM", "GS", "MS", "BAC", "WFC", "C", "BLK", "AXP",
     # Semis & hardware
     "AMD", "AVGO", "QCOM", "MU", "AMAT", "INTC", "ARM", "ASML", "TSM",
@@ -265,6 +325,25 @@ COMPANY_NAMES = {
 
 def get_earnings_this_week(monday: date) -> list[dict]:
     """Return earnings reports expected this week for the priority watchlist."""
+=======
+    "JPM", "GS", "MS", "BAC", "WFC", "C",
+    # Semis
+    "AMD", "AVGO", "QCOM", "MU", "AMAT", "INTC",
+    # Energy
+    "XOM", "CVX", "COP",
+    # Retail / Consumer
+    "WMT", "TGT", "COST", "HD", "NKE",
+    # Other major names
+    "NFLX", "DIS", "RDDT", "CRM", "ORCL",
+]
+
+
+def get_earnings_this_week(monday: date) -> list[dict]:
+    """
+    Return earnings reports expected this week for the priority watchlist.
+    Uses yfinance .calendar to get the next earnings date per ticker.
+    """
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
     friday = monday + timedelta(days=4)
     reporting = []
 
@@ -277,13 +356,20 @@ def get_earnings_this_week(monday: date) -> list[dict]:
             earn_dates = cal.get("Earnings Date", [])
             if not earn_dates:
                 continue
+<<<<<<< HEAD
+=======
+            # earn_dates is a list; take the nearest upcoming date
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
             for earn_dt in earn_dates:
                 earn_date = earn_dt.date() if hasattr(earn_dt, "date") else earn_dt
                 if isinstance(earn_date, date) and monday <= earn_date <= friday:
                     eps_est = cal.get("Earnings Average")
                     rev_est = cal.get("Revenue Average")
                     reporting.append({
+<<<<<<< HEAD
                         "company":    COMPANY_NAMES.get(ticker_sym, ticker_sym),
+=======
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
                         "ticker":     ticker_sym,
                         "date":       earn_date.strftime("%a %b %d"),
                         "eps_est":    f"${eps_est:.2f}" if eps_est else "—",
@@ -316,11 +402,18 @@ def get_earnings_today(report_date: date) -> list[dict]:
                     eps_est = cal.get("Earnings Average")
                     rev_est = cal.get("Revenue Average")
                     reporting.append({
+<<<<<<< HEAD
                         "company":  COMPANY_NAMES.get(ticker_sym, ticker_sym),
                         "ticker":   ticker_sym,
                         "date":     earn_date.strftime("%a %b %d"),
                         "eps_est":  f"${eps_est:.2f}" if eps_est else "—",
                         "rev_est":  _fmt_revenue(rev_est),
+=======
+                        "ticker":  ticker_sym,
+                        "date":    earn_date.strftime("%a %b %d"),
+                        "eps_est": f"${eps_est:.2f}" if eps_est else "—",
+                        "rev_est": _fmt_revenue(rev_est),
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
                     })
                     break
         except Exception:

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "market-news",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/myang/Downloads/Claude Code/Market News/start_dashboard.sh"],
+      "port": 8501
+    }
+  ]
+}

@@ -73,6 +73,7 @@ def get_top_headlines(prior_day: date, max_per_category: int = 3) -> list[dict]:
 def get_macro_calendar(report_date: date) -> list[dict]:
     """
     Live economic calendar for report_date.
+<<<<<<< HEAD
     Returns only high-impact events plus a curated set of medium-impact ones.
     Falls back to a minimal stub if scraping fails.
     """
@@ -95,6 +96,22 @@ def get_macro_calendar(report_date: date) -> list[dict]:
 
     return [{"time (ET)": "—", "event": "Economic calendar unavailable",
              "importance": "—", "note": "—", "previous": "—"}]
+=======
+    Primary source: Investing.com (same underlying data as MarketWatch calendar).
+    Falls back to a minimal stub if scraping fails.
+    """
+    try:
+        from scrapers import scrape_investing_calendar
+        events = scrape_investing_calendar(report_date)
+        if events:
+            return events
+    except Exception as e:
+        print(f"Calendar scrape failed: {e}")
+
+    # Fallback stub
+    return [{"time (ET)": "—", "event": "Economic calendar unavailable", "period": "—",
+             "actual": "—", "forecast": "—", "previous": "—", "importance": "—"}]
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
 
 
 # ── Week ahead calendar (Mondays) ─────────────────────────────────────────────
@@ -102,18 +119,28 @@ def get_macro_calendar(report_date: date) -> list[dict]:
 def get_week_ahead_calendar(monday: date) -> list[dict]:
     """
     Live week-ahead economic calendar for Monday morning reports.
+<<<<<<< HEAD
     Scrapes Mon–Fri from Investing.com, filtering to HIGH importance only.
+=======
+    Scrapes Mon–Fri from Investing.com, filtering to medium+ importance.
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
     Falls back to a structured stub on failure.
     """
     try:
         from scrapers import scrape_week_investing_calendar
         events = scrape_week_investing_calendar(monday)
+<<<<<<< HEAD
         filtered = [e for e in events if e.get("importance", "") == "🔴 High"]
+=======
+        # Filter to medium importance and above for the week-ahead view
+        filtered = [e for e in events if e.get("importance", "") in ("🔴 High", "🟡 Medium")]
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
         if filtered:
             return filtered
     except Exception as e:
         print(f"Week ahead calendar scrape failed: {e}")
 
+<<<<<<< HEAD
     # Fallback stub — high-impact anchors only
     mon, wed, thu, fri = [monday + timedelta(days=i) for i in [0, 2, 3, 4]]
     return [
@@ -125,4 +152,14 @@ def get_week_ahead_calendar(monday: date) -> list[dict]:
          "importance": "🔴 High", "note": "Weekly new unemployment filings; real-time labor signal", "previous": "—"},
         {"date": fri.strftime("%a %b %d"), "event": "Nonfarm Payrolls",
          "importance": "🔴 High", "note": "Monthly jobs report; most watched labor market data", "previous": "—"},
+=======
+    # Fallback stub
+    mon, tue, wed, thu, fri = [monday + timedelta(days=i) for i in range(5)]
+    return [
+        {"date": mon.strftime("%a %b %d"), "event": "Markets open — watch futures and weekend news", "importance": "—"},
+        {"date": tue.strftime("%a %b %d"), "event": "JOLTS Job Openings (if scheduled); Fed speakers", "importance": "🟡 Medium"},
+        {"date": wed.strftime("%a %b %d"), "event": "ADP Employment; ISM Services PMI; Fed Minutes (if applicable)", "importance": "🟡 Medium"},
+        {"date": thu.strftime("%a %b %d"), "event": "Initial Jobless Claims (8:30 AM ET)", "importance": "🟡 Medium"},
+        {"date": fri.strftime("%a %b %d"), "event": "Nonfarm Payrolls (first Friday); UMich Sentiment", "importance": "🔴 High"},
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
     ]

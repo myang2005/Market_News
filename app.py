@@ -596,6 +596,7 @@ st.divider()
 
 section_label("Today's Economic Calendar")
 
+<<<<<<< HEAD
 _CAL_COLS      = ["time (ET)", "event", "importance", "note", "previous"]
 _CAL_IS_STUB   = (
     len(scraped_calendar) == 1
@@ -608,6 +609,19 @@ if scraped_calendar and not _CAL_IS_STUB:
     st.dataframe(_cal_df, hide_index=True)
 else:
     # Fall back to AI-inferred calendar text
+=======
+# Prefer the live scraped calendar; fall back to the AI-generated text table
+_cal_is_stub = (
+    len(scraped_calendar) == 1
+    and "unavailable" in scraped_calendar[0].get("event", "").lower()
+)
+if scraped_calendar and not _cal_is_stub:
+    display_cols = ["time (ET)", "event", "period", "actual", "forecast", "previous", "importance"]
+    cal_df = pd.DataFrame(scraped_calendar)[[c for c in display_cols if c in pd.DataFrame(scraped_calendar).columns]]
+    st.dataframe(cal_df, hide_index=True)
+else:
+    # Fall back to AI-inferred calendar
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
     ai_calendar = summary.get("macro_calendar", "")
     if ai_calendar and "no major releases" not in ai_calendar.lower():
         cal_rows = []
@@ -617,11 +631,19 @@ else:
                 continue
             parts = [p.strip() for p in line.split("|")]
             if len(parts) == 3:
+<<<<<<< HEAD
                 cal_rows.append({"Time": parts[0], "Event": parts[1], "Note": parts[2]})
             elif len(parts) == 2:
                 cal_rows.append({"Time": parts[0], "Event": parts[1], "Note": ""})
             else:
                 cal_rows.append({"Time": "—", "Event": line, "Note": ""})
+=======
+                cal_rows.append({"Time": parts[0], "Event": parts[1], "Why It Matters": parts[2]})
+            elif len(parts) == 2:
+                cal_rows.append({"Time": parts[0], "Event": parts[1], "Why It Matters": ""})
+            else:
+                cal_rows.append({"Time": "—", "Event": line, "Why It Matters": ""})
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
         if cal_rows:
             st.dataframe(pd.DataFrame(cal_rows), hide_index=True)
         else:
@@ -632,6 +654,7 @@ else:
 if earnings_today:
     st.divider()
     section_label("Earnings Today — Priority Watchlist")
+<<<<<<< HEAD
     _et_df = pd.DataFrame(earnings_today)
     _et_cols = [c for c in ["company", "ticker", "date", "eps_est", "rev_est"] if c in _et_df.columns]
     st.dataframe(_et_df[_et_cols], hide_index=True)
@@ -649,6 +672,19 @@ if is_monday:
         _ew_df = pd.DataFrame(earnings_this_week)
         _ew_cols = [c for c in ["company", "ticker", "date", "eps_est", "rev_est"] if c in _ew_df.columns]
         st.dataframe(_ew_df[_ew_cols], hide_index=True)
+=======
+    st.dataframe(pd.DataFrame(earnings_today), hide_index=True)
+
+if is_monday:
+    st.divider()
+    section_label("Week Ahead — Key Events This Week")
+    st.caption("It's Monday — here's what to watch across the trading week.")
+    if week_ahead:
+        st.dataframe(pd.DataFrame(week_ahead), hide_index=True)
+    if earnings_this_week:
+        st.markdown("**Priority earnings reporters this week:**")
+        st.dataframe(pd.DataFrame(earnings_this_week), hide_index=True)
+>>>>>>> 81638a08212eb30308f3bcd357044f7983b43bc2
 
 st.divider()
 
